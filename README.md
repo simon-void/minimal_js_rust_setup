@@ -1,0 +1,1 @@
+## Minimal setup of JS-Rust/WASM interop (no bundler)

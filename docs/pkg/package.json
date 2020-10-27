@@ -1,0 +1,15 @@
+{
+  "name": "minimal_js_rust_setup",
+  "collaborators": [
+    "StephanS <simon.void+github@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "minimal_js_rust_setup_bg.wasm",
+    "minimal_js_rust_setup.js",
+    "minimal_js_rust_setup.d.ts"
+  ],
+  "module": "minimal_js_rust_setup.js",
+  "types": "minimal_js_rust_setup.d.ts",
+  "sideEffects": false
+}
