@@ -5,13 +5,16 @@
     <title>Minimal setup of JS code invoking Rust/Wasm code</title>
 </head>
 <body>
+    <div style="background-color: lightskyblue; padding: 5px 25px;">
+        <pre>Please enter your name:</pre>
+        <input type="text" id="name">
+        <pre>message from wasm:</pre>
+        <div id="msg_box">waiting for input</div>
+    </div>
 
-    <pre>Please enter your name:</pre>
-    <input type="text" id="name">
-    <pre>message from wasm:</pre>
-    <div id="msg_box">waiting for input</div>
     <br>
-    <div style="background-color: lightskyblue">
+
+    <div>
         this functionality (this website which includes passing a String to wasm and receiving one back) only
         required:
         <ul>
