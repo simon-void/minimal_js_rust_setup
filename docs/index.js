@@ -21,6 +21,5 @@ window.onload = function () {
         display_greeting(event.target.value);
     }
     let nameTextField = document.getElementById('name');
-    nameTextField.addEventListener("change", update_greeting,false);
-    nameTextField.addEventListener("keypress", update_greeting,false);
+    nameTextField.addEventListener("keyup", update_greeting,false);
 }
