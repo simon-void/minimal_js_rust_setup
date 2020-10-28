@@ -1,11 +1,11 @@
 import init from './pkg/minimal_js_rust_setup.js';
 import * as wasm from './pkg/minimal_js_rust_setup.js';
 
-async function display_greeting() {
+async function display_greeting(name) {
     console.log("init wasm")
     await init()
     console.log("invoking wasm")
-    let greeting = await wasm.get_greeting_for("Mike")
+    let greeting = await wasm.get_greeting_for(name)
     console.log("received from wasm: " + greeting)
     set_text(greeting)
 }
@@ -17,5 +17,10 @@ function set_text(text) {
 }
 
 console.log("executing index.js")
-set_text("loading ...")
-display_greeting()
+set_text("waiting for input")
+
+window.onload = function () {
+    document.getElementById('name').addEventListener("keypress", function(event){
+        display_greeting(event.target.value)
+    },false);
+}
