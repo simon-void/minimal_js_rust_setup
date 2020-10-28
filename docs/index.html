@@ -8,10 +8,10 @@
     <h1>Minimal setup of JS code invoking Rust/Wasm code</h1>
 
     <div style="background-color: lightskyblue; padding: 5px 25px;">
-        <pre>Please enter your name:</pre>
+        <p>Please enter your name:</p>
         <input type="text" id="name">
-        <pre>message from wasm:</pre>
-        <div id="msg_box">waiting for input</div>
+        <p>message from wasm:</p>
+        <span id="msg_box">waiting for input</span>
     </div>
 
     <br>
@@ -32,7 +32,7 @@
     <br>
     <div>
         Preview: This is the js-code invoking the wasm module:
-        <pre style="color: darkslateblue">
+        <pre style="color: darkslateblue; font-weight: bold;font-size: larger;">
 import init from './pkg/minimal_js_rust_setup.js';
 import * as wasm from './pkg/minimal_js_rust_setup.js';
 
