@@ -29,7 +29,20 @@
         You can see the complete code (and some build instructions in the Readme)
         <a href="https://github.com/simon-void/minimal_js_rust_setup">here</a>.
     </div>
+    <br>
+    <div>
+        Preview: This is the js-code invoking the wasm module:
+        <pre style="color: darkslateblue">
+import init from './pkg/minimal_js_rust_setup.js';
+import * as wasm from './pkg/minimal_js_rust_setup.js';
 
+async function display_greeting(name) {
+    await init();
+    let greeting = await wasm.get_greeting_for(name);
+    setText(greeting);
+}
+        </pre>
+    </div>
     <script src="index.js" type="module"></script>
 </body>
 </html>

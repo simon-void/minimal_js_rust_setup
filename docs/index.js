@@ -7,10 +7,10 @@ async function display_greeting(name) {
     console.log("invoking wasm");
     let greeting = await wasm.get_greeting_for(name);
     console.log("received from wasm: " + greeting);
-    set_text(greeting);
+    setText(greeting);
 }
 
-function set_text(text) {
+function setText(text) {
     let msg_div=document.getElementById("msg_box");
     msg_div.innerText = text;
     console.log("set text to: " + text);
