@@ -20,7 +20,9 @@ console.log("executing index.js")
 set_text("waiting for input")
 
 window.onload = function () {
-    document.getElementById('name').addEventListener("keypress", function(event){
+    function update_greeting(event){
         display_greeting(event.target.value)
-    },false);
+    }
+    document.getElementById('name').addEventListener("change", update_greeting,false);
+    document.getElementById('name').addEventListener("keypress", update_greeting,false);
 }
