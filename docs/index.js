@@ -1,8 +1,9 @@
-import * as wasm from './pkg/minimal_js_rust_setup.js'
+import init from './pkg/minimal_js_rust_setup.js';
+import * as wasm from './pkg/minimal_js_rust_setup.js';
 
 async function display_greeting() {
     console.log("init wasm")
-    await wasm.init()
+    await init()
     console.log("invoking wasm")
     let greeting = await wasm.get_greeting_for("Mike")
     console.log("received from wasm: " + greeting)
