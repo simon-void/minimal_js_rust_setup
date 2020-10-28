@@ -31,8 +31,8 @@
     </div>
     <br>
     <div>
-        Preview: This is the js-code invoking the wasm module:
-        <pre style="color: darkslateblue; font-weight: bold;font-size: larger;">
+        <strong>Preview:</Strong> This is the js-code invoking the wasm module:
+        <pre style="color: #004; font-weight: bold;font-size: large;">
 import init from './pkg/minimal_js_rust_setup.js';
 import * as wasm from './pkg/minimal_js_rust_setup.js';
 
@@ -40,8 +40,16 @@ async function display_greeting(name) {
     await init();
     let greeting = await wasm.get_greeting_for(name);
     setText(greeting);
-}
-        </pre>
+}       </pre>
+        and this is the rust-code being compiled:
+        <pre style="color: #004; font-weight: bold;font-size: large;">
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub fn get_greeting_for(name: &str) -> JsValue {
+    let greeting = format!("Hi, {}", name);
+    JsValue::from_str(greeting.as_str())
+}       </pre>
     </div>
     <script src="index.js" type="module"></script>
 </body>
